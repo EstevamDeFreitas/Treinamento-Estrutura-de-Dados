@@ -1,13 +1,16 @@
 #include <iostream>
 #include "lista.h"
+#include "pilha.h"
 
 int main() {
-	Lista L;
-	L.adicionar(9);
-	L.adicionar(28);
-	L.adicionar(7.89);
-	L.exibir();
-	L.deletar();
-	L.exibir();
+	Pilha P;
+	P.empurra(90.99);
+	P.empurra(28);
+	P.empurra(72);
+
+	P.deleta();
+
+	std::cout<<P.vazia();
+
 	return 0;
 }
