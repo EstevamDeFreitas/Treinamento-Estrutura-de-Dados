@@ -1,6 +1,5 @@
 #include <iostream>
-#include "lista.h"
-#include "pilha.h"
+#include "pilha/pilha.h"
 
 int main() {
 	Pilha P;
