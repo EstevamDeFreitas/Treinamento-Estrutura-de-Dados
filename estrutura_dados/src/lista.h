@@ -2,8 +2,6 @@
 
 #pragma once
 
-#include <iostream>
-
 struct No {
     double valor;
     No* proximo;
