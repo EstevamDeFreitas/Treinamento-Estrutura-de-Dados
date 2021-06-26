@@ -1,15 +1,16 @@
 #include <iostream>
-#include "pilha/pilha.h"
+#include "fila/fila.h"
 
 int main() {
-	Pilha P;
-	P.empurra(90.99);
-	P.empurra(28);
-	P.empurra(72);
-
-	P.deleta();
-
-	std::cout<<P.vazia();
-
+	Fila F(5);
+	F.enfileirar(2291.89);
+	F.enfileirar(127.28);
+	F.enfileirar(490.87);
+	F.enfileirar(320.19);
+	F.enfileirar(229.89);
+	F.exibirFila();
+	F.enfileirar(36);
+	F.enfileirar(23);
+	F.exibirFila();
 	return 0;
 }

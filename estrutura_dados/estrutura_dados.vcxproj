@@ -147,13 +147,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\lista.cpp" />
+    <ClCompile Include="src\fila\fila.cpp" />
+    <ClCompile Include="src\lista\lista.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\pilha\pilha.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\fila.h" />
-    <ClInclude Include="src\lista.h" />
+    <ClInclude Include="src\fila\fila.h" />
+    <ClInclude Include="src\lista\lista.h" />
     <ClInclude Include="src\pilha\pilha.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
