@@ -147,10 +147,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\fila\fila.cpp" />
-    <ClCompile Include="src\lista\lista.cpp" />
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\pilha\pilha.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\fila\fila.h" />

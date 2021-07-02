@@ -2,26 +2,69 @@
 
 #pragma once
 
+template <typename T>
 struct Elemento {
-	double valor;
-	Elemento* proximo;
+	T valor;
+	Elemento<T>* proximo;
 };
 
-Elemento* elementoNovo(double valor, Elemento* anterior);
-
+template <typename C>
 class Pilha {
 private:
-	Elemento* extremidade;
+	Elemento<C>* extremidade;
+	Elemento<C>* elementoNovo(C valor, Elemento<C>* anterior) {
+		Elemento<C>* temp = new Elemento<C>;
+		temp->proximo = anterior;
+		temp->valor = valor;
+		return temp;
+	}
 public:
-	Pilha();
+	Pilha() {
+		extremidade = NULL;
+	}
 
-	double topo();
+	C topo() {
+		return extremidade->valor;
+	}
 
-	void empurra(double valor);
+	void empurra(C valor) {
+		Elemento<C>* aux = elementoNovo(valor, extremidade);
+		extremidade = aux;
+	}
 
-	double puxa();
+	C puxa() {
+		if (extremidade != NULL) {
+			Elemento<C>* aux = extremidade;
+			C temp = aux->valor;
+			if (extremidade->proximo != NULL) {
+				extremidade = extremidade->proximo;
+				delete aux;
+				aux = NULL;
+				return temp;
+			}
+			else {
+				extremidade = NULL;
+				delete aux;
+				aux = NULL;
+				return temp;
+			}
+		}
+		else {
+			std::cout << "Erro: Pilha vazia\n";
+			return 0;
+		}
+	}
 
-	void deleta();
+	void deleta() {
+		if (extremidade == NULL) return;
+		Elemento<C>* aux = extremidade;
+		extremidade = extremidade->proximo;
+		delete aux;
+		aux = NULL;
+		return deleta();
+	}
 
-	bool vazia();
+	bool vazia() {
+		return extremidade == NULL ? true : false;
+	}
 };
