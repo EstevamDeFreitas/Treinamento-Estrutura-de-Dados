@@ -5,7 +5,26 @@
 
 Construção de alguns tipos de estruturas de dados vistos no curso de estrutura de dados da Digital Innovation One.
 
-Todas as estruturas de dados foram feitas em C++, e recebem valores double para armazenamento, o que pode ser alterado no futuro.
+Todas as estruturas de dados foram feitas em C++, e recebem qualquer tipo de valor para armazenamento exceto structs.
+
+Exemplo de aplicação:
+```cpp
+#include <iostream>
+#include "fila/fila.h"
+
+int main(){ 
+	Fila<const char*> filaDoBanco(0);
+
+	filaDoBanco.enfileirar("Joana");
+	filaDoBanco.enfileirar("Marcos");
+	
+	std::cout << "Ha " << filaDoBanco.qtdaElementos() << " pessoas esperando na fila\n";
+
+	std::cout << filaDoBanco.desenfileirar() << " foi atendida\n";
+
+	return 0;
+}
+```
 
 ## Estruturas Implementadas
  - Filas.
@@ -17,6 +36,6 @@ Todas as estruturas de dados foram feitas em C++, e recebem valores double para 
  - Hashmap.
  - Grafos.
 
-
+O projeto foi feito dentro do Visual Studio Community 2019.
 
 Estou aberto a sujestões e críticas :smile:.
